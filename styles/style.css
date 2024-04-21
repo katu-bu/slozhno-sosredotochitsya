@@ -1,5 +1,326 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-color: var(--bg-color);
+  background-image: url(../images/cover-image-dark.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  height: 100vh;
+  min-height: 668px;
+  padding: 10px;
+}
+
+.decorated-corner-left::before {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--header-decor-color);
+  border-left: 1px solid var(--header-decor-color);
+}
+
+.decorated-corner-right::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--header-decor-color);
+  border-right: 1px solid var(--header-decor-color);
+}
+
+.header-decor {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  margin-top: 9px;
+  margin-right: 19px;
+  color: var(--header-decor-color);
+  font-family: var(--header-decor-color);
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.38889;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.header-decor::after {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--header-decor-color);
+  background-color: var(--header-decor-color);
+}
+
+.header__theme-menu {
+  justify-self: flex-end;
+  align-self: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.header__theme-menu-item {
+  list-style-type: none;
+}
+
+.header__theme-menu-button {
+  min-width: 70px;
+  border: none;
+  color: var(--header-decor-color);
+  font-family: var(--font-family), monospace;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.38889;
+  text-transform: lowercase;
+  background-color: transparent;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--header-decor-color);
+  pointer-events: none;
+}
+
+.header__theme-menu-button_active:hover {
+  border: 1px solid rgb(from var(--header-decor-color) r g b / 0.4);
+}
+
+.header__theme-menu-button_active:focus-visible {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
+.main-heading {
+  justify-self: flex-start;
+  align-self: center;
+  color: var(--main-heading-text-color);
+  font-family: var(--font-family), monospace;
+  font-weight: bold;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 0.825;
+}
+
+.shadow {
+  text-shadow: 4px 4px 0 var(--shadow-color);
+}
+
+.title-decor {
+  color: var(--title-text-color);
+  font-family: var(--font-family), monospace;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.3;
+  background-color: var(--accent-color);
+}
+
+.title-decor.subtitle-decor {
+  font-weight: normal;
+}
+
+.title-decor.accent-title {
+  color: var(--section-title-text-color);
+  background-color: transparent;
+}
+
+.header-title-position {
+  justify-self: flex-end;
+  align-self: center;
+  width: max(355px, calc(50vw - 20px));
+  max-height: 117px;
+}
+
+.main-text-decor {
+  color: var(--text-color);
+  font-family: var(--font-family), monospace;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+.link-decor {
+  color: var(--text-color);
+  text-decoration: none;
+  text-shadow: 2px 2px 2px var(--accent-color);
+}
+
+.link-decor:hover {
+  text-decoration: underline var(--text-color);
+}
+
+.link-decor:focus-visible {
+  border: 1px solid var(--text-color);
+}
+
+.section {
+  display: grid;
+  gap: 20px;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+.main > :last-child {
+  gap: 10px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.advices {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.images-layout {
+  display: grid;
+  gap: 10px;
+}
+
+.image {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  min-height: 668px;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+.footer_heading {
+  margin-left: 6px;
+  text-shadow: 2px 2px 0 0 var(--shadow-color);
+}
+
+@media (768px <= width) {
+  .header {
+    min-height: 1024px;
+    padding: 20px;
+  }
+  .decorated-corner-left::before {
+    bottom: 20px;
+    left: 20px;
+  }
+  .decorated-corner-right::after {
+    top: 20px;
+    right: 20px;
+  }
+  .header-decor {
+    margin-top: 19px;
+    margin-right: 29px;
+  }
+  .main-heading {
+    margin-left: -18px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+  .section {
+    grid-template-columns: 1fr 2fr;
+    margin-top: 40px;
+    padding: 20px;
+  }
+  .main > :nth-child(2) {
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+      "a ."
+      "b b";
+  }
+  .main > :nth-child(2) > .accent-title {
+    grid-area: a;
+  }
+  .main > :nth-child(2) > .list {
+    grid-area: b;
+  }
+  .main > :last-child {
+    grid-template-columns: 1fr;
+  }
+  .images-layout {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 8px;
+  }
+  .image:first-child {
+    grid-column: span 2;
+  }
+  .image:nth-child(2) {
+    grid-row: span 2;
+  }
+  .image:nth-child(3) {
+    grid-row: span 2;
+  }
+  .image:nth-child(4) {
+    grid-row: span 1;
+  }
+  .image:last-child {
+    grid-column: span 2;
+  }
+  .footer {
+    justify-content: center;
+    min-height: 1024px;
+    margin-top: 40px;
+    padding: 20px;
+  }
+  .footer_heading-position {
+    margin-left: 4px;
+  }
+}
+
+@media (1024px <= width) {
+  .header {
+    min-height: 768px;
+  }
+  .header__theme-menu {
+    justify-self: center;
+    align-self: flex-start;
+  }
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+  .section {
+    gap: 10px;
+  }
+  .main > :nth-child(2) > .list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 10px;
+  }
+  .footer {
+    min-height: 768px;
+  }
 }
