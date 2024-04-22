@@ -7,6 +7,9 @@
   --main-heading-text-color: #ffc2e6;
   --section-title-text-color: #353430;
   --font-family: 'IBM Plex mono', monospace; 
+  --S-size: 18px;
+  --M-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --L-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   --header-decor-color: #353430;
   background-image: url(../images/cover-image-light.png); 
 }
@@ -30,6 +33,9 @@
   --section-title-text-color: #353430;
   --header-decor-color: #353430;
   --font-family: 'IBM Plex mono', monospace;
+  --S-size: 18px;
+  --M-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --L-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
   .page {
   background-image: url(../images/cover-image-light.png); 
